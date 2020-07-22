@@ -1,0 +1,68 @@
+.header {
+    text-align: center;
+}
+
+.campaign-card{
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inner-card{
+  /* width: calc(25% - 10px);
+  height: calc(33.333% - 10px); */
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+
+}
+
+.front-card, .back-card {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 5px;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    height: 670px;
+    margin: 0 auto;
+    position: absolute;
+    width: 400px;
+}
+
+/* .front-card:active {
+      transform: scale(0.97);
+      transition: transform .2s;
+      transform: rotateY(180deg);
+} */
+
+
+.front-image{
+    height: 350px;
+    width: 400px;
+}
+
+.front-card-title{
+    color: purple;
+    margin-left: 20px;
+}
+
+.front-card-subtitle{
+    color: black;
+    margin-left: 20px;
+    /* padding-top: -100px; */
+}
+
+.front-card-paragraph{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    color: grey;
+}
+
+  /* border-top: solid 4px black;
+    border-right: solid 4px black;
+    border-left: solid 4px black;
+    border-bottom: solid 4px black; */
+      /* transform-style: preserve-3d;
+    transition: transform .5s; */
