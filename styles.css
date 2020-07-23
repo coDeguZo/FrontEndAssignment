@@ -10,8 +10,6 @@
 }
 
 .inner-card{
-  /* width: calc(25% - 10px);
-  height: calc(33.333% - 10px); */
     margin: 5px;
     position: relative;
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
@@ -35,11 +33,29 @@
     border-radius: 5px;
     -moz-osx-font-smoothing: grayscale;
     transition-duration: 0.3s;
-    height: 670px;
+    height: 700px;
     margin: 0 auto;
     position: absolute;
-    width: 400px;
+    width: 410px;
     backface-visibility: hidden
+}
+
+.graph{
+    background: silver;
+    height: 30px;
+    width: 380px;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+.graph:after {
+    content: '';
+    float: left;
+    display: block;
+    background: purple;
+    width: 17%;
+    height: 100%;
+    margin: 0 auto;
 }
 
 .back-card {
@@ -48,30 +64,118 @@
 
 .front-image{
     height: 350px;
-    width: 400px;
+    width: 410px;
 }
 
 .front-card-title{
     color: purple;
-    margin-left: 20px;
+    margin-left: 30px;
+    margin-bottom: -15px;
 }
 
 .front-card-subtitle{
     color: black;
-    margin-left: 20px;
+    margin-left: 30px;
     /* padding-top: -100px; */
 }
 
 .front-card-paragraph{
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 30px;
+    margin-right: 15px;
     font-size: 20px;
+    letter-spacing: .5px;
     color: grey;
 }
 
-  /* border-top: solid 4px black;
-    border-right: solid 4px black;
-    border-left: solid 4px black;
-    border-bottom: solid 4px black; */
-      /* transform-style: preserve-3d;
-    transition: transform .5s; */
+.column1 {
+    float: left;
+    width: 33.33%;
+    margin-top: 10px;
+    /* padding: 10px; */
+    padding-left: 25px;
+    height: 1px;
+    font-size: 17px;
+}
+
+.column2 {
+    float: right;
+    text-align: right;
+    width: 33.33%;
+    margin-top: 10px;
+    /* padding: 10px; */
+    padding-right: 20px;
+    height: 1px;
+    font-size: 17px;
+}
+
+.column3 {
+    float: left;
+    width: 33.33%;
+    /* padding: 10px; */
+    padding-left: 25px;
+    font-size: 17px;
+    color: silver;
+}
+
+.column4 {
+    float: right;
+    text-align: right;
+    width: 33.33%;
+    /* padding: 10px; */
+    padding-right: 20px;
+    font-size: 17px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+.back-title{
+    text-align: center;
+    color: purple;
+}
+
+.back-subtitle{
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    font-size: 20px;
+}
+    
+th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 0.5px solid #ddd;
+}
+
+.gift-button-container {
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .gift-button{
+    background-color: purple;
+    border: none;
+    color: white;
+    /* padding: 20px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 32px;
+    height: 40px;
+    width: 240px;
+  }
+
+.total-amount {
+    text-align: center;
+}
