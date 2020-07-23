@@ -36,7 +36,7 @@ function frontOfCard(total, donors){
     challengeSubTitle.className = "front-card-subtitle"
     
     const challengePara = document.createElement("p")
-    challengePara.innerText = "$25,000 is on the line.  Please make a gift today to honor Dean PAco and help 2017 reach 60%!"
+    challengePara.innerText = "$25,000 is on the line.  Please make a gift today to honor Dean Paco and help 2017 reach 60%!"
     challengePara.className = "front-card-paragraph"
     
     const chartDiv = document.querySelector(".bar-chart")
