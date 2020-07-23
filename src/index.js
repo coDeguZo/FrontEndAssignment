@@ -11,26 +11,27 @@ function fetchDonors(){
     .then(resp => resp.json())
     .then( function (donors) {
         donors.forEach(donor => renderDonors(donor))
-        let total = donors.reduce((currentValue, donation) => {
+        let totalAmount = donors.reduce((currentValue, donation) => {
             return currentValue + donation.amount
         }, 0)
-        renderTotal(total)
-        frontOfCard(total)
+        let totalDonors = donors.length
+        renderTotal(totalAmount)
+        frontOfCard(totalAmount, totalDonors)
 })  
 }
 
 
-function frontOfCard(total){
+function frontOfCard(total, donors){
     const universityFrontImage = document.createElement("img")
     universityFrontImage.alt = "University Image"
     universityFrontImage.src = "https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/BUSEGDVBRU3QPAPZ7B2Q2APV34.jpg"
     universityFrontImage.className = "front-image"
     
-    const challengeTitle = document.createElement("h2")
+    const challengeTitle = document.createElement("p")
     challengeTitle.innerText = "Class of 2017 Challenge"
     challengeTitle.className = "front-card-title"
     
-    const challengeSubTitle = document.createElement("h3")
+    const challengeSubTitle = document.createElement("p")
     challengeSubTitle.innerText = "For College of the Holy Cross"
     challengeSubTitle.className = "front-card-subtitle"
     
@@ -41,25 +42,23 @@ function frontOfCard(total){
     const chartDiv = document.querySelector(".bar-chart")
 
     const column1Percent = document.querySelector(".column1")
-    const barChartPercentage = document.createElement("h3")
+    const barChartPercentage = document.createElement("p")
     barChartPercentage.innerText = "17%"
     column1Percent.append(barChartPercentage)
 
     const column2Donors = document.querySelector(".column2")
-    const barChartDonors = document.createElement("h3")
-    barChartDonors.innerText = "10 Donors"
+    const barChartDonors = document.createElement("p")
+    barChartDonors.innerText = `${donors} Donors`
     column2Donors.append(barChartDonors)
 
     const column3Active = document.querySelector(".column3")
-    const barChartActive = document.createElement("h3")
+    const barChartActive = document.createElement("p")
     barChartActive.innerText = "Active"
     column3Active.append(barChartActive)
 
     const column4Total = document.querySelector(".column4")
-    const barChartTotal = document.createElement("h3")
-    // const arrayValues = JSON.parse(localStorage.amount)
-    // const reducer = arrayValues.reduce((num, currentValue) => num + currentValue, 0 )
-    barChartTotal.innerText = `$ ${Math.round(total)} Donated`
+    const barChartTotal = document.createElement("p")
+    barChartTotal.innerText = `$${Math.round(total)} Donated`
     column4Total.append(barChartTotal)
 
     card.addEventListener('click', flipCard)
@@ -90,19 +89,19 @@ function backOfCard(){
     donorTableHeader3.className = "type"
     donorTableHeader3.innerText = "Type"
 
-    const backTitle = document.createElement("h1")
+    const backTitle = document.createElement("p")
     backTitle.innerText = "Class of 2017 Challenge"
     backTitle.className = "back-title"
 
-    const backSubTitle = document.createElement("h2")
+    const backSubTitle = document.createElement("p")
     backSubTitle.innerText = "Top 10 donors"
     backSubTitle.className = "back-subtitle"
 
-    const donorTitle = document.createElement("h1")
+    const donorTitle = document.createElement("h2")
     donorTitle.innerText = "Donor"
-    const donorDollars = document.createElement("h1")
+    const donorDollars = document.createElement("h2")
     donorDollars.innerText = "Dollars"
-    const donorType = document.createElement("h1")
+    const donorType = document.createElement("h2")
     donorType.innerText = "Type"
 
     const buttonDiv = document.createElement("div")
@@ -128,7 +127,7 @@ function renderDonors(donor){
     donorName.innerText = donor["name"]
 
     const donorDollars = document.createElement("td")
-    donorDollars.innerText = donor["amount"]
+    donorDollars.innerText = `$${donor["amount"]}`
     donorDollars.className = `amount`
     const donorType = document.createElement("td")
     donorType.innerText = donor["type"]
@@ -140,7 +139,7 @@ function renderDonors(donor){
 function renderTotal(total){
     const universityBottomBackInfo = document.querySelector(".inner-back-bottom-info")
     const totalDiv = document.createElement("div")
-    const totalNum = document.createElement("h1")
+    const totalNum = document.createElement("p")
     totalNum.innerText = `$ ${Math.round(total)}`
     totalNum.className = "total-amount"
     totalDiv.append(totalNum)
